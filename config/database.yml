@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  template: template0
+development:
+  <<: *default
+  database: weblog_development
+
+test:
+  <<: *default
+  database: weblog_test
+
+production:
+  <<: *default
+  database: weblog_production
+  username: weblog
+  password: <%= ENV['WEBLOG_DATABASE_PASSWORD'] %>
