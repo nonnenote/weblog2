@@ -15,11 +15,13 @@
     <%= form.label :title %>
     <%= form.text_field :title %>
   </div>
+  <br>
   <div class="blog_title">
     <%= form.label :content %>
     <%= form.text_field :content %>
   </div>
-  <%= form.submit %>
+  <br>
+  <%= form.submit  class: 'btn btn-info' %>
 <% end %>
 <br>
-<%= link_to "ブログ一覧画面にもどる", blogs_path %>
+<%= link_to "ブログ一覧画面にもどる", blogs_path, class: 'btn btn-primary' %>
