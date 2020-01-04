@@ -60,7 +60,7 @@ class BlogsController < ApplicationController
   end
 
   def login_require
-    flash[:notice] = 'ログインしてください'
+    
     redirect_to blogs_path unless current_user
   end
 end
