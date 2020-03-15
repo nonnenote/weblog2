@@ -1,10 +1,11 @@
 <p>ブログ一覧</p>
 <div class="container">
 <p><%= notice %></p>
-  <div class="row contents">
+<div class="row contents">
     <% @blogs.each do |blog| %>
-    <div class="col-md-4 col-xs-12">
-      <p style="margin-top:20px;"><b>タイトル</b><br><%= blog.title %></p>
+    <div class="col-md-4 col-xs-12" style="margin-top:20px;">
+      <p>投稿者　<%= blog.user.name %></p>
+      <p><b>タイトル</b><br><%= blog.title %></p>
       <p><b>内容</b><br><%= blog.content %></p>
     <%= link_to '詳細を確認する', blog_path(blog.id) %>
     <%= link_to "ブログを編集する", edit_blog_path(blog.id) %>

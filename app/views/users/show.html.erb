@@ -5,3 +5,16 @@
       <%= link_to '新しくブログを投稿する', new_blog_path, class: 'btn btn-primary' %>
 </p>
 <%= link_to "ブログ一覧画面にもどる", blogs_path, class: 'btn btn-primary' %>
+
+<div class="container_user" style="margin-top:20px;">
+<p><b>お気に入り一覧</b></p>
+<div class="row contents">
+    <% @favorite_blogs.each do |favorite_blog| %>
+    <div class="col-md-3 col-xs-6" style="margin-top:20px;">
+      <p>投稿者　<%= favorite_blog.user.name %></p>
+      <p><b>タイトル</b><br><%= favorite_blog.title %></p>
+      <p><b>内容</b><br><%= favorite_blog.content %></p>
+    </div>
+<% end %>
+</div>
+</div>
